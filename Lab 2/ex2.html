@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Example 2 GET SET</title>
+	<script type = "text/javascript" src = "jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function()
+		{
+			var title=$("p").attr("title");
+			$("#divid").text(title);
+			$("#myimg").attr("src","/home/lab1/220905260/Lab 2/img.jpg");
+		});
+	</script>
+</head>
+<body>
+	<div>
+	<p title = "Bold and Brave">This is first paragraph.</p>
+	<p id = "myid">This is second paragraph.</p>
+	<div id = "divid"></div>
+	<img id = "myimg" alt = "Sample image" style="width: 500px; height: 350px;"/>
+	</div>
+</body>
+</html>
