@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Customizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #options {
+            width: 50%;
+            padding-right: 20px;
+        }
+        #card {
+            width: 50%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="options">
+    <h2>Customize Your Card</h2>
+    
+    <label for="bgColor"> Choose your Background Color:</label>
+    <select id="bgColor">
+        <option value="#ffffff">White</option>
+        <option value="#ffcccb">Light Red</option>
+        <option value="#ccffcc">Light Green</option>
+        <option value="#add8e6">Light Blue</option>
+    </select>
+    <br><br>
+
+    <label for="font">Choose your Font:</label>
+    <select id="font">
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select>
+    <br><br>
+
+    <label for="fontSize">Choose your Font Size:</label>
+    <input type="number" id="fontSize" value="16" min="10" max="50"> px
+    <br><br>
+
+    <label>Select your Border Style:</label><br>
+    <input type="radio" name="border" value="none" checked> None<br>
+    <input type="radio" name="border" value="solid"> Solid<br>
+    <input type="radio" name="border" value="dashed"> Dashed<br>
+    <input type="radio" name="border" value="dotted"> Dotted<br>
+    <br>
+
+    <label>
+        <input type="checkbox" id="defaultImage"> Add Default Picture
+    </label>
+    <br><br>
+
+    <label for="greetingText">Greeting Text:</label><br>
+    <textarea id="greetingText" rows="4" cols="30"></textarea>
+    <br><br>
+
+    <button id="updateCard">Update Card</button>
+</div>
+
+<div id="card">
+    <div id="cardContent">
+    <p>Your greeting will appear here.</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#updateCard').click(function() {
+            // Get values from inputs
+            var bgColor = $('#bgColor').val();
+            var font = $('#font').val();
+            var fontSize = $('#fontSize').val() + 'px';
+            var borderStyle = $('input[name="border"]:checked').val();
+            var greetingText = $('#greetingText').val();
+            var defaultImage = $('#defaultImage').is(':checked');
+
+            // Update card styles
+            $('#cardContent').css({
+                'background-color': bgColor,
+                'font-family': font,
+                'font-size': fontSize,
+                'border': borderStyle === 'none' ? 'none' : '2px ' + borderStyle + ' black',
+                'padding': '10px'
+            });
+
+            // Update greeting text
+            $('#cardContent').html(greetingText || 'Your greeting will appear here.');
+
+            // Add default image if checked
+            if (defaultImage) {
+                $('#cardContent').prepend('<img src="/home/lab1/220905260/Lab 2/119.jpg" alt="Default Image"><br>');
+            } else {
+                $('#cardContent img').remove();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
