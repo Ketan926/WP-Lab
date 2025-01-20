@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <script type = "text/javascript" src="jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <script>
+        $(document).ready(function() {
+            function bounce() {
+                $('.ball').animate(
+                    { top: $(window).height() - 50 },
+                    1000,
+                    function() {
+                        $('.ball').animate({ top: 0 }, 1000, bounce);
+                    }
+                );
+            }
+            bounce();
+        });
+    </script>
+</body>
+</html>
