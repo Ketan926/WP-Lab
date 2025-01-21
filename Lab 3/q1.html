@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Bio-data</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h2 class="text-center">Student Bio-Data Form</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" class="form-control" id="dob" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                <label class="form-check-label" for="other">Other</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Hobbies:</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hobby1" value="Reading">
+                <label class="form-check-label" for="hobby1">Reading</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hobby2" value="Sports">
+                <label class="form-check-label" for="hobby2">Sports</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hobby3" value="Music">
+                <label class="form-check-label" for="hobby3">Music</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hobby4" value="Traveling">
+                <label class="form-check-label" for="hobby4">Traveling</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Choose Course:</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="course1" value="B.Tech." required>
+                <label class="form-check-label" for="course1">B.Tech.</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="course2" value="B.Sc.">
+                <label class="form-check-label" for="course2">B.Sc.</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="course3" value="PhD">
+                <label class="form-check-label " for="course3">PhD</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="course" id="course4" value="Diploma">
+                <label class="form-check-label" for="course4">Diploma</label>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
