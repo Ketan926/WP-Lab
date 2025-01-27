@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .booking-form {
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 booking-form">
+            <h2 class="text-center">Train Ticket Booking</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="fromStation" class="form-label">From Station</label>
+                    <input type="text" class="form-control" id="fromStation" placeholder="Enter departure station" required>
+                </div>
+                <div class="mb-3">
+                    <label for="toStation" class="form-label">To Station</label>
+                    <input type="text" class="form-control" id="toStation" placeholder="Enter arrival station" required>
+                </div>
+                <div class="mb-3">
+                    <label for="departureDate" class="form-label">Departure Date</label>
+                    <input type="date" class="form-control" id="departureDate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="passengerName" class="form-label">Passenger Name</label>
+                    <input type="text" class="form-control" id="passengerName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="classType" class="form-label">Class Type</label>
+                    <select class="form-select" id="classType" required>
+                        <option value="" disabled selected>Select class type</option>
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First Class</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="contactEmail" class="form-label">Contact Email</label>
+                    <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Book Ticket</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

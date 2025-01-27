@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science and Engineering Timetable</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .timetable {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        .timetable th {
+            background-color: #f2f2f2;
+        }
+        .break {
+            background-color: #ddd;
+        }
+        .placement {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</h2>
+        <h3 class="text-center">TIMETABLE: JAN-MAY 2025</h3>
+        <h4 class="text-center">Lecture Hall: ABS 212</h4>
+        <h5 class="text-center">Effective from: Jan 3, 2025</h5>
+        <table class="timetable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>08.00-09.00</th>
+                    <th>09.00-10.00</th>
+                    <th>10.00-10.30</th>
+                    <th>10.30-11.30</th>
+                    <th>11.30-12.30</th>
+                    <th>12.30-01.00</th>
+                    <th>01.00-02.00</th>
+                    <th>02.00-03.00</th>
+                    <th>03.00-03.30</th>
+                    <th>03.30-04.30</th>
+                </tr>
+            </thead> <tbody>
+                <tr>
+                    <td><strong>MON</strong></td>
+                    <td>CD</td>
+                    <td>PE-I</td>
+                    <td class="break">Break</td>
+                    <td>EEFM</td>
+                    <td>PE-II</td>
+                    <td class="break">Lunch Break</td>
+                    <td></td>
+                    <td colspan="3">CD LAB (D1)</td>
+                </tr>
+                <tr>
+                    <td><strong>TUE</strong></td>
+                    <td></td>
+                    <td colspan="3">WP LAB (D2)</td>
+                    <td></td>
+                    <td class="break">Lunch Break</td>
+                    <td>EEFM</td>
+                    <td>OE</td>
+                    <td class="break">Break</td>
+                    <td class="placement">PLACEMENT</td>
+                </tr>
+                <tr>
+                    <td><strong>WED</strong></td>
+                    <td>EEFM</td>
+                    <td>PE-II</td>
+                    <td class="break">Break</td>
+                    <td>CD</td>
+                    <td>OE</td>
+                    <td class="break">Lunch Break</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>THU</strong></td>
+                    <td></td>
+                    <td colspan="3">PCAP LAB (D1) / CD LAB (D2)</td>
+                    <td></td>
+                    <td class="break">Lunch Break</td>
+                    <td>PCAP</td>
+                    <td>PE-I</td>
+                    <td class="break">Break</td>
+                    <td class="placement">PLACEMENT</td>
+                </tr>
+                <tr>
+                    <td><strong>FRI</strong></td>
+                    <td>WP</td>
+                    <td>OE</td>
+                    <td class="break">Break</td>
+                    <td>PCAP</td>
+                    <td>PE-I</td>
+                    <td class="break">Lunch Break</td>
+                    <td></td>
+                    <td colspan="3">WP LAB (D1)</td>
+                </tr>
+                <tr>
+                    <td><strong>SAT</strong></td>
+                    <td></td>
+                    <td colspan="3">PCAP LAB (D2)</td>
+                    <td></td>
+                    <td class="break">Lunch Break</td>
+                    <td>PCAP</td>
+                    <td>PE-II</td>
+                    <td class="break">Break</td>
+                    <td>CD</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+    </div>
+</body>
+</html>
