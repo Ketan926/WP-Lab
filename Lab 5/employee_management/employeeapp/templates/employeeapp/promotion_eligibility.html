@@ -1,0 +1,31 @@
+<!-- employeeapp/templates/employeeapp/promotion_eligibility.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion Eligibility</title>
+</head>
+<body>
+    <h1>Check Promotion Eligibility</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="employee_id">Select Employee ID:</label>
+        <select id="employee_id" name="employee_id" required>
+            <option value="">--Select Employee--</option>
+            {% for emp_id in employee_ids %}
+                <option value="{{ emp_id }}">{{ emp_id }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="date_of_joining">Date of Joining:</label>
+        <input type="date" id="date_of_joining" name="date_of_joining" required><br><br>
+
+        <button type="submit">Am I Eligible for Promotion?</button>
+    </form>
+
+    {% if eligibility_message %}
+        <h2>Eligibility for Promotion: {{ eligibility_message }}</h2>
+    {% endif %}
+</body>
+</html>

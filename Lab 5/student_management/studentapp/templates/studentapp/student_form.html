@@ -1,0 +1,55 @@
+<!-- studentapp/templates/studentapp/student_form.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Form</title>
+</head>
+<body>
+    <h1>Enter Student Details</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br><br>
+
+        <label for="contact_number">Contact Number:</label>
+        <input type="text" id="contact_number" name="contact_number" required><br><br>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="english_marks">Marks in English:</label>
+        <input type="number" id="english_marks" name="english_marks" min="0" max="100" required><br><br>
+
+        <label for="physics_marks">Marks in Physics:</label>
+        <input type="number" id="physics_marks" name="physics_marks" min="0" max="100" required><br><br>
+
+        <label for="chemistry_marks">Marks in Chemistry:</label>
+        <input type="number" id="chemistry_marks" name="chemistry_marks" min="0" max="100" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if student_details %}
+        <h2>Student Details</h2>
+        <textarea rows="10" cols="50" readonly>
+        Name: {{ student_details.name }}
+        Date of Birth: {{ student_details.dob }}
+        Address: {{ student_details.address }}
+        Contact Number: {{ student_details.contact_number }}
+        Email ID: {{ student_details.email }}
+        Marks in English: {{ student_details.english_marks }}
+        Marks in Physics: {{ student_details.physics_marks }}
+        Marks in Chemistry: {{ student_details.chemistry_marks }}
+        Total Percentage: {{ total_percentage|floatformat:2 }}%
+        </textarea>
+    {% endif %}
+</body>
+</html>
