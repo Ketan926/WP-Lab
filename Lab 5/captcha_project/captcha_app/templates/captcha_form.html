@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Verification</title>
+    <script>
+        function verifyCaptcha() {
+            let input = document.getElementById("captcha_input").value;
+            let button = document.getElementById("submit_btn");
+
+            fetch('/verify/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': document.getElementsByName('csrfmiddlewaretoken')[0].value
+                },
+                body: 'captcha_input=' + encodeURIComponent(input)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("message").innerText = data.message;
+                if (data.disable) {
+                    document.getElementById("captcha_input").disabled = true;
+                    button.disabled = true;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter the Captcha:</h2>
+    <p><strong>CAPTCHA:</strong> {{ captcha }}</p>
+
+    <form onsubmit="event.preventDefault(); verifyCaptcha();">
+        {% csrf_token %}
+        <input type="text" id="captcha_input" {% if disabled %}disabled{% endif %}>
+        <button id="submit_btn" type="submit" {% if disabled %}disabled{% endif %}>Submit</button>
+    </form>
+
+    <p id="message"></p>
+</body>
+</html>
