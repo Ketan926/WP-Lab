@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Cover Generator</title>
+
+    <!-- Load static files -->
+    {% load static %}
+
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <h1>Create Your Magazine Front Cover</h1>
+
+    <div class="container">
+        <div class="form-container">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <label for="background_color">Background Color:</label>
+                <input type="text" name="background_color" id="background_color" value="#FFFFFF"><br><br>
+
+                <label for="font_color">Font Color:</label>
+                <input type="text" name="font_color" id="font_color" value="#000000"><br><br>
+
+                <label for="font_size">Font Size:</label>
+                <input type="number" name="font_size" id="font_size" value="30" min="10" max="100"><br><br>
+
+                <label for="font_family">Font Family:</label>
+                <input type="text" name="font_family" id="font_family" value="Arial"><br><br>
+
+                <label for="text_message">Text Message:</label>
+                <textarea name="text_message" id="text_message" rows="4" cols="50"></textarea><br><br>
+
+                <label for="cover_image">Upload Image:</label>
+                <input type="file" name="cover_image" id="cover_image" required><br><br>
+
+                <button type="submit">Generate Cover</button>
+            </form>
+        </div>
+
+        {% if result %}
+            <div class="cover-preview" style="background-color: {{ result.background_color }}; color: {{ result.font_color }}; font-size: {{ result.font_size }}px; font-family: {{ result.font_family }};">
+                <img src="{{ result.image_url }}" alt="Cover Image" style="width: 100%; height: auto;">
+                <div class="cover-text">{{ result.text_message }}</div>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

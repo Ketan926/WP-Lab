@@ -1,0 +1,78 @@
+/* Basic reset to reduce margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Container to align form and result side by side */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;  /* Add some gap between the form and result */
+}
+
+/* Style for the form */
+.form-container {
+    flex: 1;  /* Make the form take up available space */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the form fields */
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;  /* Reduced space between fields */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style for the button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Style for the cover preview */
+.cover-preview {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cover-preview img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cover-preview .cover-text {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
