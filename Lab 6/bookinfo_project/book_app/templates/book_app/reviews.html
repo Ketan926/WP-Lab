@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+        }
+        .review {
+            margin-bottom: 20px;
+        }
+        .review p {
+            margin: 5px 0;
+        }
+        .rating {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Reviews</h1>
+        
+        <!-- Review 1 -->
+        <div class="review">
+            <p><strong>Reviewer:</strong> The Guardian</p>
+            <p><strong>Rating:</strong> <span class="rating">★★★★★</span></p>
+            <p><strong>Comment:</strong> "The Goblet of Fire is my favourite, and this is mostly down to the creatures and other wizarding students we meet in the novel." <a href="https://www.theguardian.com/childrens-books-site/2014/apr/28/review-j-k-rowling-harry-potter-and-the-goblet-of-fire" target="_blank">Read more</a></p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review">
+            <p><strong>Reviewer:</strong> Goodreads</p>
+            <p><strong>Rating:</strong> <span class="rating">★★★★☆</span></p>
+            <p><strong>Comment:</strong> "This fourth installment, with a heart-pounding and emotional climax, serves as a turning point in the series, for the reader and for Harry himself." <a href="https://www.goodreads.com/book/show/6.Harry_Potter_and_the_Goblet_of_Fire" target="_blank">Read more</a></p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review">
+            <p><strong>Reviewer:</strong> Fantasy Literature</p>
+            <p><strong>Rating:</strong> <span class="rating">★★★★☆</span></p>
+            <p><strong>Comment:</strong> "A captivating and exciting continuation of the series that sets the stage for darker events ahead. The emotional depth of the characters and the intensity of the plot make this one of the best books in the series." <a href="https://www.fantasyliterature.com/reviews/harry-potter-and-the-goblet-of-fire/" target="_blank">Read more</a></p>
+        </div>
+
+        <!-- Back to Home link -->
+        <nav>
+            <a href="{% url 'home' %}">Back to Home</a>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harry Potter and the Goblet of Fire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Harry Potter and the Goblet of Fire</h1>
+        <!-- Correct reference to image in static/images -->
+        <img src="{% static 'images/img.jpeg' %}" alt="Book Cover">
+        <nav>
+            <a href="{% url 'metadata' %}">Metadata</a>
+            <a href="{% url 'reviews' %}">Reviews</a>
+            <a href="{% url 'publisher' %}">Publisher Info</a>
+        </nav>
+    </div>
+</body>
+</html>

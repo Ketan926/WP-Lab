@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publisher Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Publisher Information</h1>
+        <p><strong>Publisher:</strong> Bloomsbury (UK), Scholastic (US), Raincoast (Canada)</p>
+        <p><strong>First Published:</strong> 8 July 2000 (UK), 1 September 2000 (US)</p>
+        <p><strong>ISBN:</strong> 978-0439139601</p>
+        <p><strong>Country:</strong> United Kingdom</p>
+        <p><strong>Overview:</strong> The book was first published by Bloomsbury in the UK, followed by Scholastic in the US. It was a major turning point in the *Harry Potter* series, with darker themes and a more intricate plot. The book received critical acclaim and won several awards, including the Hugo Award for Best Novel in 2001.</p>
+        <p><strong>Notable Editions:</strong></p>
+        <ul>
+            <li>UK First Edition (Hardcover) - Bloomsbury</li>
+            <li>US First Edition (Hardcover) - Scholastic</li>
+            <li>Illustrated Edition - Released in 2019</li>
+            <li>20th Anniversary Edition - Released in 2020</li>
+        </ul>
+        <nav>
+            <a href="{% url 'home' %}">Back to Home</a>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- label_app/templates/label_app/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Label Formatting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        label {
+            margin-right: 10px;
+        }
+        .formatted-message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Label Formatting</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Display Message</button>
+        <button type="reset">Clear</button>
+        <button type="button" onclick="window.close();">Exit</button>
+    </form>
+
+    {% if formatted_message %}
+        <div class="formatted-message">
+            <h3>Formatted Message:</h3>
+            <div>{{ formatted_message|safe }}</div>
+        </div>
+    {% endif %}
+</body>
+</html>

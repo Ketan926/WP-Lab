@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Metadata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Metadata</h1>
+        <p><strong>Title:</strong> Harry Potter and the Goblet of Fire</p>
+        <p><strong>Author:</strong> J.K. Rowling</p>
+        <p><strong>Publication Date:</strong> 8 July 2000</p>
+        <p><strong>ISBN:</strong> 978-0439139601</p>
+        <p><strong>Synopsis:</strong> In his fourth year at Hogwarts School of Witchcraft and Wizardry, Harry Potter is unexpectedly entered into the Triwizard Tournament, a magical competition between three schools. Facing dangerous tasks, dragons, and dark wizards, Harry must confront challenges that test his courage and character, all while the shadow of Lord Voldemort's return looms over the wizarding world.</p>
+        <nav>
+            <a href="{% url 'home' %}">Back to Home</a>
+        </nav>
+    </div>
+</body>
+</html>
