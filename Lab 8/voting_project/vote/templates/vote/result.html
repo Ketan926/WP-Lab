@@ -1,0 +1,84 @@
+<!-- vote/templates/vote/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .result-item {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .percentage {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Vote Result for the Book</h1>
+    
+    <div class="result-item">
+        Good: <span class="percentage">{{ good_percentage }}%</span> ({{ vote_counts.good }} votes)
+    </div>
+    <div class="result-item">
+        Satisfactory: <span class="percentage">{{ satisfactory_percentage }}%</span> ({{ vote_counts.satisfactory }} votes)
+    </div>
+    <div class="result-item">
+        Bad: <span class="percentage">{{ bad_percentage }}%</span> ({{ vote_counts.bad }} votes)
+    </div>
+
+    <a href="{% url 'vote' %}">Go Back to Vote Again</a>
+
+    <div class="footer">
+        <p>Thank you for your feedback!</p>
+    </div>
+</div>
+
+</body>
+</html>

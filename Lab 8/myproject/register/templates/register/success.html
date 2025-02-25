@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #5cb85c;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .go-back {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .go-back a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .go-back a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome, {{ username }}!</h1>
+    <p>We have successfully registered your account with the following details:</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Contact Number:</strong> {{ contact }}</p>
+
+    <div class="go-back">
+        <p><a href="/">Go back to the registration page</a></p>
+    </div>
+</div>
+
+</body>
+</html>
