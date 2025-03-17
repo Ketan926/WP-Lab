@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        form { display: inline-block; text-align: left; }
+        .btn { background: blue; color: white; padding: 10px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form method="POST" action="{% url 'process_feedback' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn" type="submit">Submit Form</button>
+    </form>
+</body>
+</html>

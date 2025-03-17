@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Submitted</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 50%; margin: auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <h1>Feedback Submitted Successfully!</h1>
+    <table>
+        <tr><th>Name</th><td>{{ name }}</td></tr>
+        <tr><th>Email</th><td>{{ email }}</td></tr>
+        <tr><th>Course</th><td>{{ course }}</td></tr>
+        <tr><th>Feedback</th><td>{{ feedback }}</td></tr>
+    </table>
+    <br>
+    <a href="{% url 'feedback_form' %}">Go Back</a>
+</body>
+</html>

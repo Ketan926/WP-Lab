@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill Summary</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 50%; margin: auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <h1>Bill Summary</h1>
+    <table>
+        <tr><th>Brand</th><td>{{ brand }}</td></tr>
+        <tr><th>Products</th><td>{{ products|join:", " }}</td></tr>
+        <tr><th>Quantity</th><td>{{ quantity }}</td></tr>
+        <tr><th>Total Price</th><td>₹{{ total_price }}</td></tr>
+    </table>
+    <br>
+    <a href="{% url 'billing_form' %}">Go Back</a>
+</body>
+</html>
