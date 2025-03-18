@@ -1,0 +1,7 @@
+<h1>Insert Lives Data</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ lives_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'index' %}">Back to Home</a>

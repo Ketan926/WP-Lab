@@ -1,0 +1,16 @@
+<h1>Search Results</h1>
+<table>
+    <tr>
+        <th>Person Name</th>
+        <th>Company Name</th>
+        <th>City</th>
+    </tr>
+    {% for person_name, company_name, city in people_details %}
+    <tr>
+        <td>{{ person_name }}</td>
+        <td>{{ company_name }}</td>
+        <td>{{ city }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'index' %}">Back to Home</a>
