@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Institute Directory</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 50%; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid black; }
+        .btn { display: inline-block; padding: 10px; background: blue; color: white; text-decoration: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Institute Directory</h1>
+    <div class="container">
+        <h2>All Institutes</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>No. of Courses</th>
+            </tr>
+            {% for institute in institutes %}
+            <tr>
+                <td>{{ institute.institute_id }}</td>
+                <td>{{ institute.name }}</td>
+                <td>{{ institute.no_of_courses }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'add_institute' %}" class="btn">Add New Institute</a>
+    </div>
+</body>
+</html>

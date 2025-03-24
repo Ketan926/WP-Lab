@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }}</title>
+</head>
+<body>
+    <h1>{{ category.name }}</h1>
+    <p>Visits: {{ category.visits }}</p>
+    <p>Likes: {{ category.likes }}</p>
+
+    <h2>Pages</h2>
+    <ul>
+        {% for page in pages %}
+            <li><a href="{{ page.url }}" target="_blank">{{ page.title }}</a> ({{ page.views }} views)</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>
