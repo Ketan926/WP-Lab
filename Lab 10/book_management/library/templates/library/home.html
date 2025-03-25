@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management</title>
+</head>
+<body>
+    <h1>Library Management</h1>
+
+    <h2>Authors</h2>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.first_name }} {{ author.last_name }} ({{ author.email }})</li>
+        {% empty %}
+            <li>No authors found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_author' %}">Add Author</a>
+
+    <h2>Publishers</h2>
+    <ul>
+        {% for publisher in publishers %}
+            <li>{{ publisher.name }} - {{ publisher.street_address }}, {{ publisher.city }}, {{ publisher.state_province }}, {{ publisher.country }} ({{ publisher.website }})</li>
+        {% empty %}
+            <li>No publishers found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_publisher' %}">Add Publisher</a>
+
+    <h2>Books</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} (Published on: {{ book.publication_date }}) - Authors: {{ book.authors.all|join:", " }} - Publisher: {{ book.publisher.name }}</li>
+        {% empty %}
+            <li>No books found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_book' %}">Add Book</a>
+</body>
+</html>

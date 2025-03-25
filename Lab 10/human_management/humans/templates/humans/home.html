@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Management</title>
+</head>
+<body>
+    <h1>Human Management</h1>
+
+    <form method="POST" action="{% url 'get_human_details' %}">
+        {% csrf_token %}
+        <label for="first_name">Select First Name:</label>
+        <select name="first_name" id="first_name" onchange="this.form.submit()">
+            <option value="">--Select--</option>
+            {% for human in humans %}
+                <option value="{{ human.first_name }}">{{ human.first_name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    {% if selected_human %}
+    <form method="POST" action="{% url 'update_human' %}">
+        {% csrf_token %}
+        <input type="hidden" name="first_name" value="{{ selected_human.first_name }}">
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" value="{{ selected_human.last_name }}">
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" value="{{ selected_human.phone }}">
+        <label for="address">Address:</label>
+        <textarea name="address">{{ selected_human.address }}</textarea>
+        <label for="city">City:</label>
+        <input type="text" name="city" value="{{ selected_human.city }}">
+        <button type="submit">Update</button>
+    </form>
+
+    <form method="POST" action="{% url 'delete_human' %}">
+        {% csrf_token %}
+        <input type="hidden" name="first_name" value="{{ selected_human.first_name }}">
+        <button type="submit">Delete</button>
+    </form>
+    {% endif %}
+</body>
+</html>
